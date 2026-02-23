@@ -1,63 +1,125 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <title>최용헌 ♥ 강지혜 결혼합니다</title>
-  <meta name="description" content="2027년 4월 17일 토요일 오후 12시 10분, 원주 빌라드아모르" />
+  <meta name="description" content="2027년 4월 17일 토요일 오후 12시 10분, 원주 빌라드아모르 (북원로 2888)"/>
+  <meta property="og:title" content="최용헌 ♥ 강지혜 결혼합니다"/>
+  <meta property="og:description" content="2027.04.17 토 12:10 · 원주 빌라드아모르"/>
   <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
-                   "Noto Sans KR", sans-serif;
-      background: #111;
-      color: #fff;
-      text-align: center;
-      line-height: 1.6;
-      padding: 40px 20px;
+    :root{
+      --bg:#0b0c10; --card:#11131a; --text:#f2f4f8; --muted:#b8c0cc;
+      --line:rgba(255,255,255,.10); --shadow:0 14px 40px rgba(0,0,0,.45);
+      --radius:22px; --accent:#ffffff;
     }
-    h1 { font-size: 28px; margin-bottom: 10px; }
-    .date { font-size: 16px; opacity: 0.85; margin-bottom: 30px; }
-    .box {
-      max-width: 420px;
-      margin: 0 auto;
-      background: #1c1c1c;
-      border-radius: 14px;
-      padding: 30px 20px;
+    *{box-sizing:border-box}
+    body{
+      margin:0; color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+      background:
+        radial-gradient(1200px 800px at 20% -10%, rgba(255,255,255,.10), rgba(255,255,255,0)),
+        radial-gradient(900px 700px at 90% 0%, rgba(255,255,255,.06), rgba(255,255,255,0)),
+        var(--bg);
+      line-height:1.6; padding:18px 14px 36px;
     }
-    .place { margin-top: 20px; font-size: 15px; }
-    a {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 12px 20px;
-      background: #fff;
-      color: #000;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
+    .wrap{max-width:520px;margin:0 auto}
+    .hero{text-align:center;padding:26px 18px 10px}
+    .badge{display:inline-block;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;letter-spacing:.12em}
+    h1{margin:16px 0 6px;font-size:28px;letter-spacing:-.02em}
+    .names{font-size:18px;font-weight:800;margin-top:6px}
+    .subtitle{max-width:26em;margin:10px auto 0;color:var(--muted);font-size:14px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin:14px 0}
+    .section{padding:18px}
+    .section+.section{border-top:1px solid var(--line)}
+    .label{font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
+    .row{display:flex;gap:10px;font-size:15px}
+    .icon{width:20px;opacity:.9}
+    .muted{color:var(--muted)}
+    .buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+    .btn{
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      padding:12px;border-radius:14px;border:1px solid var(--line);
+      color:var(--text);text-decoration:none;font-weight:800;font-size:14px;
+      background: rgba(255,255,255,.02)
     }
+    .btn.primary{background:var(--accent);color:#0b0c10;border-color:rgba(255,255,255,.65)}
+    .message{white-space:pre-line;font-size:15px}
+    .contacts{display:grid;gap:12px}
+    .contact{display:flex;align-items:center;justify-content:space-between;gap:10px;
+      padding:12px;border:1px solid var(--line);border-radius:16px;background:rgba(0,0,0,.10)}
+    .who{font-weight:900}
+    .pill{display:flex;gap:8px}
+    .pill a{display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 12px;border-radius:14px;border:1px solid var(--line);
+      text-decoration:none;color:var(--text);font-weight:900;font-size:13px;background:rgba(255,255,255,.02);min-width:68px}
+    footer{text-align:center;color:var(--muted);font-size:12px;padding:14px 6px 0}
   </style>
 </head>
 <body>
-  <h1>최용헌 ♥ 강지혜</h1>
-  <div class="date">
-    2027년 4월 17일 토요일<br>
-    오후 12시 10분
-  </div>
-
-  <div class="box">
-    서로 다른 길을 걸어온 두 사람이<br>
-    이제 같은 방향을 바라보며<br>
-    평생을 함께하려 합니다.<br><br>
-    소중한 분들을 초대합니다.
-
-    <div class="place">
-      원주 빌라드아모르
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">WEDDING INVITATION</span>
+      <h1>결혼합니다</h1>
+      <div class="names">최용헌 · 강지혜</div>
+      <div class="subtitle">서로의 하루가 함께의 인생이 되는 날, 소중한 분들을 초대합니다.</div>
     </div>
 
-    <a href="https://map.naver.com/v5/search/원주%20빌라드아모르" target="_blank">
-      지도 보기
-    </a>
+    <div class="card">
+      <div class="section">
+        <div class="label">Date & Place</div>
+        <div class="row"><div class="icon">📅</div>
+          <div><b>2027년 4월 17일 (토)</b> <span class="muted">오후 12시 10분</span></div>
+        </div>
+        <div class="row" style="margin-top:10px"><div class="icon">📍</div>
+          <div><b>원주 빌라드아모르</b><br><span class="muted">강원 원주시 북원로 2888</span></div>
+        </div>
+        <div class="buttons">
+          <a class="btn primary" href="https://map.naver.com/v5/search/원주%20빌라드아모르%20북원로%202888" target="_blank">🗺️ 네이버 지도</a>
+          <a class="btn" href="https://map.kakao.com/link/search/원주%20빌라드아모르%20북원로%202888" target="_blank">📍 카카오 지도</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">Message</div>
+        <div class="message">
+서로 다른 길을 걸어온 두 사람이
+이제 같은 방향을 바라보며
+평생을 함께하려 합니다.
+
+귀한 걸음으로 저희의 시작을 축복해 주세요.
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">Contact</div>
+        <div class="contacts">
+          <div class="contact">
+            <div>
+              <div class="who">신랑 최용헌</div>
+              <div class="muted" style="font-size:13px;margin-top:2px">010-2014-3011</div>
+            </div>
+            <div class="pill">
+              <a href="tel:01020143011">전화</a>
+              <a href="sms:01020143011">문자</a>
+            </div>
+          </div>
+          <div class="contact">
+            <div>
+              <div class="who">신부 강지혜</div>
+              <div class="muted" style="font-size:13px;margin-top:2px">010-5628-1827</div>
+            </div>
+            <div class="pill">
+              <a href="tel:01056281827">전화</a>
+              <a href="sms:01056281827">문자</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>© Mobile Invitation</footer>
   </div>
 </body>
 </html>
