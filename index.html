@@ -1,196 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="용헌 ♥ 지혜 결혼합니다">
-
-  <!-- Open Graph / Twitter 태그는 크롤러가 JS를 실행하지 않으므로 직접 수정 필요 -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="용헌 ♥ 지혜 결혼합니다">
-  <meta property="og:description" content="2026년 11월 29일 일요일 오후 2시 문정 루이비스 그레이스홀">
-  <meta property="og:image" content="https://taeseon-lee.github.io/wedding/thumbnail/photo1.png">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="용헌 ♥ 지혜 결혼합니다">
-  <meta name="twitter:description" content="2026년 11월 29일 일요일 오후 2시 문정 루이비스 그레이스홀">
-  <meta name="twitter:image" content="https://taeseon-lee.github.io/wedding/thumbnail/photo1.png">
-
-  <title>용헌 ♥ 지혜 결혼합니다</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>최용헌 ♥ 강지혜 결혼합니다</title>
+  <meta name="description" content="2027년 4월 17일 (토) 12:10 · 원주 빌라드아모르"/>
+  <meta property="og:title" content="최용헌 ♥ 강지혜 결혼합니다"/>
+  <meta property="og:description" content="2027.04.17 (토) 12:10 · 원주 빌라드아모르"/>
+  <style>
+    :root{
+      --bg:#f6f7f9; --card:#ffffff; --text:#111827; --muted:#6b7280;
+      --line:#e5e7eb; --accent:#111827; --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:-apple-system,BlinkMacSystemFont,"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+      background:var(--bg); color:var(--text); line-height:1.6; padding:18px;
+    }
+    .wrap{max-width:520px;margin:0 auto}
+    .hero{padding:28px 20px 10px;text-align:center}
+    .badge{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px}
+    h1{margin:14px 0 6px;font-size:26px}
+    .names{font-weight:800;font-size:18px}
+    .subtitle{color:var(--muted);font-size:14px;margin-top:8px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin:12px 0}
+    .section{padding:18px}
+    .section+.section{border-top:1px solid var(--line)}
+    .label{font-size:12px;color:var(--muted);letter-spacing:.08em;margin-bottom:10px}
+    .row{display:flex;gap:10px;font-size:15px}
+    .muted{color:var(--muted)}
+    .buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+    .btn{padding:12px;border-radius:12px;border:1px solid var(--line);text-align:center;text-decoration:none;color:var(--text);font-weight:800;background:#fff}
+    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .message{white-space:pre-line;font-size:15px}
+    .contacts{display:grid;gap:10px}
+    .contact{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:14px;padding:12px}
+    .who{font-weight:900}
+    .pill a{margin-left:6px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--text);font-weight:800}
+    footer{text-align:center;color:var(--muted);font-size:12px;padding:10px}
+  </style>
 </head>
 <body>
-  <!-- 메인 섹션 -->
-  <section id="main" class="section main-section">
-    <div class="main-content">
-      <p class="main-subtitle">Wedding Invitation</p>
-      <h1 class="main-names">
-        <span class="groom-name"></span>
-        <span class="heart">♥</span>
-        <span class="bride-name"></span>
-      </h1>
-      <p class="main-date"></p>
-      <p class="main-venue"></p>
-    </div>
-  </section>
-
-  <!-- 인사말 섹션 -->
-  <section id="greeting" class="section greeting-section">
-    <div class="section-content">
-      <h2 class="section-title greeting-title"></h2>
-      <div class="greeting-message">
-        <!-- CONFIG.greeting.message에서 생성 -->
-      </div>
-    </div>
-  </section>
-
-  <!-- 카운트다운 섹션 -->
-  <section id="countdown" class="section countdown-section">
-    <div class="section-content">
-      <h2 class="section-title">결혼식까지</h2>
-      <div class="countdown-container">
-        <div class="countdown-item">
-          <span class="countdown-number" id="days">0</span>
-          <span class="countdown-label">일</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number" id="hours">0</span>
-          <span class="countdown-label">시간</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number" id="minutes">0</span>
-          <span class="countdown-label">분</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number" id="seconds">0</span>
-          <span class="countdown-label">초</span>
-        </div>
-      </div>
-      <p class="countdown-dday" id="dday-text">D-0</p>
-    </div>
-  </section>
-
-  <!-- 소개 섹션 -->
-  <section id="intro" class="section intro-section">
-    <div class="section-content">
-      <div class="couple-info" id="couple-info">
-        <!-- CONFIG.groom/bride에서 생성 -->
-      </div>
-    </div>
-  </section>
-
-  <!-- 갤러리 섹션 -->
-  <section id="gallery" class="section gallery-section">
-    <div class="section-content">
-      <h2 class="section-title">갤러리</h2>
-      <div class="gallery-grid" id="gallery-grid">
-        <!-- CONFIG.gallery에서 생성 -->
-      </div>
-      <button class="gallery-toggle" id="gallery-toggle">더 보기</button>
-    </div>
-  </section>
-
-  <!-- 달력 섹션 -->
-  <section id="calendar" class="section calendar-section">
-    <div class="section-content">
-      <h2 class="section-title">예식 안내</h2>
-      <p class="calendar-date-text"></p>
-      <div class="calendar-container">
-        <div class="calendar-header" id="calendar-month"></div>
-        <div class="calendar-weekdays">
-          <span>일</span>
-          <span>월</span>
-          <span>화</span>
-          <span>수</span>
-          <span>목</span>
-          <span>금</span>
-          <span>토</span>
-        </div>
-        <div class="calendar-days" id="calendar-days">
-          <!-- CONFIG.wedding.date에서 생성 -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 오시는 길 섹션 -->
-  <section id="location" class="section location-section">
-    <div class="section-content">
-      <h2 class="section-title">오시는 길</h2>
-      <div class="location-info">
-        <h3 class="venue-name"></h3>
-        <p class="hall-name"></p>
-        <p class="address"></p>
-
-        <div class="map-container">
-          <a id="map-link" href="#" target="_blank">
-            <img src="map/map.png" alt="웨딩홀 위치" class="map-image">
-          </a>
-        </div>
-
-        <div class="map-buttons">
-          <a id="kakao-map-btn" href="#" target="_blank" class="map-btn kakao">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-            </svg>
-            카카오맵
-          </a>
-          <a id="naver-map-btn" href="#" target="_blank" class="map-btn naver">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
-            네이버지도
-          </a>
-        </div>
-
-        <div class="transport-info" id="transport-info">
-          <!-- CONFIG.location에서 생성 -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 계좌번호 섹션 -->
-  <section id="account" class="section account-section">
-    <div class="section-content">
-      <h2 class="section-title">마음 전하실 곳</h2>
-      <p class="account-subtitle">멀리서도 축하의 마음을<br>전하고 싶으신 분들을 위해<br>계좌번호를 안내드립니다.</p>
-
-      <div class="account-accordion" id="account-accordion">
-        <!-- CONFIG.accounts에서 생성 -->
-      </div>
-    </div>
-  </section>
-
-  <!-- 푸터 -->
-  <footer class="footer">
-    <p id="footer-names"></p>
-    <p id="footer-date"></p>
-  </footer>
-
-  <!-- 갤러리 모달 -->
-  <div class="modal" id="gallery-modal">
-    <button class="modal-close" id="modal-close">&times;</button>
-    <img class="modal-image" id="modal-image" src="" alt="">
-    <button class="modal-nav modal-prev" id="modal-prev">
-      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="15 18 9 12 15 6"/>
-      </svg>
-    </button>
-    <button class="modal-nav modal-next" id="modal-next">
-      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="9 18 15 12 9 6"/>
-      </svg>
-    </button>
+<div class="wrap">
+  <div class="hero">
+    <span class="badge">WEDDING INVITATION</span>
+    <h1>결혼합니다</h1>
+    <div class="names">최용헌 · 강지혜</div>
+    <div class="subtitle">서로의 하루가 함께의 인생이 되는 날, 소중한 분들을 초대합니다.</div>
   </div>
 
-  <!-- 토스트 메시지 -->
-  <div class="toast" id="toast">계좌번호가 복사되었습니다.</div>
+  <div class="card">
+    <div class="section">
+      <div class="label">DATE & PLACE</div>
+      <div class="row">📅 <b>2027년 4월 17일 (토)</b> <span class="muted">오후 12시 10분</span></div>
+      <div class="row" style="margin-top:8px">📍 <b>원주 빌라드아모르</b><br><span class="muted">강원 원주시 북원로 2888</span></div>
+      <div class="buttons">
+        <a class="btn primary" href="https://map.naver.com/v5/search/원주%20빌라드아모르%20북원로%202888" target="_blank">네이버 지도</a>
+        <a class="btn" href="https://map.kakao.com/link/search/원주%20빌라드아모르%20북원로%202888" target="_blank">카카오 지도</a>
+      </div>
+    </div>
 
-  <script src="config.js"></script>
-  <script src="js/main.js"></script>
+    <div class="section">
+      <div class="label">MESSAGE</div>
+      <div class="message">
+서로 다른 길을 걸어온 두 사람이
+이제 같은 방향을 바라보며
+평생을 함께하려 합니다.
+
+귀한 걸음으로 저희의 시작을 축복해 주세요.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="label">CONTACT</div>
+      <div class="contacts">
+        <div class="contact">
+          <div><div class="who">신랑 최용헌</div><div class="muted">010-2014-3011</div></div>
+          <div class="pill">
+            <a href="tel:01020143011">전화</a><a href="sms:01020143011">문자</a>
+          </div>
+        </div>
+        <div class="contact">
+          <div><div class="who">신부 강지혜</div><div class="muted">010-5628-1827</div></div>
+          <div class="pill">
+            <a href="tel:01056281827">전화</a><a href="sms:01056281827">문자</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>© Mobile Invitation</footer>
+</div>
 </body>
 </html>
